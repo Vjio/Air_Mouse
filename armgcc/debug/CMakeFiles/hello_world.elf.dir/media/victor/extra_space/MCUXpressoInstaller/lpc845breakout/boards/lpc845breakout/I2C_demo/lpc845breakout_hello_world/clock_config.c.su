@@ -1,0 +1,9 @@
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_clock.h:580:20:CLOCK_Select	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_clock.h:612:20:CLOCK_SetCoreSysClkDiv	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_clock.h:841:20:CLOCK_SetFroOscFreq	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_power.h:153:20:POWER_DisablePD	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/clock_config.c:45:6:BOARD_InitBootClocks	8	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/clock_config.c:80:6:BOARD_BootClockFRO18M	8	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/clock_config.c:125:6:BOARD_BootClockFRO24M	8	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/clock_config.c:168:6:BOARD_BootClockFRO30M	8	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/clock_config.c:214:6:BOARD_BootClockPll24M	16	static

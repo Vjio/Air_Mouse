@@ -1,0 +1,2 @@
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/fsl_swm.c:79:6:SWM_SetMovablePinSelect	32	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/fsl_swm.c:138:6:SWM_SetFixedPinSelect	24	static

@@ -1,0 +1,3 @@
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/armgcc/debug/CMakeFiles/hello_world.elf.dir
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/armgcc/debug/CMakeFiles/edit_cache.dir
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/armgcc/debug/CMakeFiles/rebuild_cache.dir

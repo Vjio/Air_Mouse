@@ -1,0 +1,253 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"path" : "ide_overrides.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "debug/CMakeFiles/3.30.0/CMakeSystem.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/tools/cmake_toolchain_files/armgcc.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/tools/cmake_toolchain_files/mcux_config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "debug/CMakeFiles/3.30.0/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "debug/CMakeFiles/3.30.0/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "debug/CMakeFiles/3.30.0/CMakeASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/CMakeASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/GNU-ASM.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/victor/.mcuxpressotools/cmake-3.30.0-linux-x86_64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"path" : "flags.cmake"
+		},
+		{
+			"path" : "config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/all_lib_device.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/CMSIS/Core/Include/CMSIS_Include_core_cm.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/components/uart/component_miniusart_adapter.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/device_CMSIS.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/device_startup.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/device_system.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_clock.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_common.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_inputmux.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_inputmux_connections.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_lpc_gpio.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_lpc_i2c.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_lpc_iocon_lite.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_lpc_miniusart.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_power.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_reset.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_swm.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_swm_connections.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_syscon.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/driver_syscon_connections.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/utilities/utilities_misc_utilities.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/utilities/debug_console_lite/utility_assert_lite.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/utilities/utility_debug_console_lite.LPC845.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/utilities/utility_str.LPC845.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/armgcc/debug",
+		"source" : "/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/armgcc"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

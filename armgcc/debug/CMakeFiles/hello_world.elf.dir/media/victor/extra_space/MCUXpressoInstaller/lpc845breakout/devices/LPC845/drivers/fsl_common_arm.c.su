@@ -1,0 +1,2 @@
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/fsl_common_arm.c:180:13:DelayLoop	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/fsl_common_arm.c:210:6:SDK_DelayAtLeastUs	40	static

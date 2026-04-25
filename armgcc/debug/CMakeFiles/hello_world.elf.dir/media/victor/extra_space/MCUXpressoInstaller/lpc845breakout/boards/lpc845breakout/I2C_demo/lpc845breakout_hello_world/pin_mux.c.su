@@ -1,0 +1,5 @@
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_clock.h:558:20:CLOCK_EnableClock	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_clock.h:569:20:CLOCK_DisableClock	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_iocon.h:102:22:IOCON_PinMuxSet	24	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/pin_mux.c:87:6:BOARD_InitBootPins	8	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/pin_mux.c:113:6:BOARD_InitPins	16	static

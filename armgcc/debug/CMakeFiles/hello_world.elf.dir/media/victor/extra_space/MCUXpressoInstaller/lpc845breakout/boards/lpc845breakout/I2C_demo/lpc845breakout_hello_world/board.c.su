@@ -1,0 +1,2 @@
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/devices/LPC845/drivers/./fsl_clock.h:580:20:CLOCK_Select	16	static
+/media/victor/extra_space/MCUXpressoInstaller/lpc845breakout/boards/lpc845breakout/I2C_demo/lpc845breakout_hello_world/board.c:25:10:BOARD_InitDebugConsole	16	static
