@@ -6,99 +6,119 @@
 #include <linux/uinput.h>
 #include <cstring>
 #include <cstdlib>
+#include <signal.h>
 
 #define PORT "/dev/ttyACM0"
 
+int stop_signal = -1;
+
+/* signal handler for Ctrl+C */
+static void handle_sigint(int signum)
+{
+	(void)signum; // Suppress unused warning
+	stop_signal = 0;
+}
+
 void emit(int fd, int type, int code, int val) {
-	struct input_event ie{};
-	ie.type = type;
-	ie.code = code;
-	ie.value = val;
-	write(fd, &ie, sizeof(ie));
+    struct input_event ie{};
+    ie.type = type;
+    ie.code = code;
+    ie.value = val;
+    write(fd, &ie, sizeof(ie));
 }
 
 int setup_uinput() {
-	// open file
-	int fd = open("/dev/uinput", O_WRONLY | O_NONBLOCK);
-	if (fd < 0) {
-		perror("open /dev/uinput"); 
-		exit(1); 
-	}
+    // open file
+    int fd = open("/dev/uinput", O_WRONLY | O_NONBLOCK);
+    if (fd < 0) {
+        perror("open /dev/uinput"); 
+        exit(1); 
+    }
 
-	ioctl(fd, UI_SET_EVBIT,  EV_REL);
-	ioctl(fd, UI_SET_RELBIT, REL_X);
-	ioctl(fd, UI_SET_RELBIT, REL_Y);
+    ioctl(fd, UI_SET_EVBIT,  EV_REL);
+    ioctl(fd, UI_SET_RELBIT, REL_X);
+    ioctl(fd, UI_SET_RELBIT, REL_Y);
 
-	// make virtual device
-	struct uinput_setup usetup{};
-	usetup.id.bustype = BUS_USB;
-	usetup.id.vendor  = 0x1234;
-	usetup.id.product = 0x5678;
-	strcpy(usetup.name, "MPU6500 Mouse");
+    // make virtual device
+    struct uinput_setup usetup{};
+    usetup.id.bustype = BUS_USB;
+    usetup.id.vendor  = 0x1234;
+    usetup.id.product = 0x5678;
+    strcpy(usetup.name, "MPU6500 Mouse");
 
-	// register it
-	ioctl(fd, UI_DEV_SETUP, &usetup);
-	ioctl(fd, UI_DEV_CREATE);
-	sleep(1); // let the kernel register the device
-	return fd;
+    // register it
+    ioctl(fd, UI_DEV_SETUP, &usetup);
+    ioctl(fd, UI_DEV_CREATE);
+    sleep(1); // let the kernel register the device
+    return fd;
 }
 
 int setup_serial(const char* port) {
-	int fd = open(port, O_RDONLY | O_NOCTTY);
-	if (fd < 0) {
-		perror("open serial"); 
-		exit(1);
-	}
+    int fd = open(port, O_RDONLY | O_NOCTTY);
+    if (fd < 0) {
+        perror("open serial"); 
+        exit(1);
+    }
 
-	struct termios tty{};
-	tcgetattr(fd, &tty);
-	cfsetspeed(&tty, B9600);
-	tty.c_cflag = CS8 | CREAD | CLOCAL;
-	tty.c_iflag = 0;
-	tty.c_oflag = 0;
-	tty.c_lflag = 0;
-	tcsetattr(fd, TCSANOW, &tty);
-	return fd;
+    struct termios tty{};
+    tcgetattr(fd, &tty);
+    cfsetspeed(&tty, B9600);
+    tty.c_cflag = CS8 | CREAD | CLOCAL;
+    tty.c_iflag = 0;
+    tty.c_oflag = 0;
+    tty.c_lflag = 0;
+    tcsetattr(fd, TCSANOW, &tty);
+    return fd;
 }
 
 int main(int argc, char* argv[]) {
-	// let user input their own port
-	const char* port;
-	if (argc > 1)
-		port = argc[1];
-	else {
-		port = PORT;
-		std::cout << "Using default ttyACM0 port for microcontroller!\n";
-	}
+    // let user input their own port
+    const char* port;
+    if (argc > 1)
+        port = argv[1];
+    else {
+        port = PORT;
+        std::cout << "Using default ttyACM0 port for microcontroller!\n";
+    }
 
-	int ufd = setup_uinput();
-	int sfd = setup_serial(port);
+    // register signal handler
+    struct sigaction sa;
+    memset(&sa, 0, sizeof(sa));
+    sa.sa_handler = handle_sigint;
+    sigaction(SIGINT, &sa, NULL);
+    sigaction(SIGTERM, &sa, NULL);
 
-	std::cout << "mouse running\n";
+    int ufd = setup_uinput();
+    int sfd = setup_serial(port);
 
-	std::string line;
-	char c;
-	while (true) {
-		if (read(sfd, &c, 1) <= 0) 
-			continue;
-		if (c == '\n') {
-			int x = 0, y = 0;
-			if (sscanf(line.c_str(), "%d,%d", &x, &y) == 2) {
-				if (x != 0 || y != 0) {
-					std::cout << "data:" << x << " " << y << "\n";
-					emit(ufd, EV_REL, REL_X, x);
-					emit(ufd, EV_REL, REL_Y, y);
-					emit(ufd, EV_SYN, SYN_REPORT, 0);
-				}
-			}
-			line.clear();
-		} else if (c != '\r') {
-			line += c;
-		}
-	}
+    std::cout << "mouse running\n";
 
-	ioctl(ufd, UI_DEV_DESTROY);
-	close(ufd);
-	close(sfd);
+    std::string line;
+    char c;
+    while (true) {
+        if (stop_signal == 0)
+            break;
+
+        if (read(sfd, &c, 1) <= 0) 
+            continue;
+        if (c == '\n') {
+            int x = 0, y = 0;
+            if (sscanf(line.c_str(), "%d,%d", &x, &y) == 2) {
+                if (x != 0 || y != 0) {
+                    std::cout << "data:" << x << " " << y << "\n";
+                    emit(ufd, EV_REL, REL_X, x);
+                    emit(ufd, EV_REL, REL_Y, y);
+                    emit(ufd, EV_SYN, SYN_REPORT, 0);
+                }
+            }
+            line.clear();
+        } else if (c != '\r') {
+            line += c;
+        }
+    }
+
+    ioctl(ufd, UI_DEV_DESTROY);
+    close(ufd);
+    close(sfd);
 }
 // g++ -o mpumouse mpumouse.cpp
