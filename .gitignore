@@ -1,3 +1,4 @@
 *.o
 *.bin
-mpumouse
+mouse
+.vscode

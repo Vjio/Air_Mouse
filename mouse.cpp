@@ -61,9 +61,18 @@ int setup_serial(const char* port) {
 	return fd;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+	// let user input their own port
+	const char* port;
+	if (argc > 1)
+		port = argc[1];
+	else {
+		port = PORT;
+		std::cout << "Using default ttyACM0 port for microcontroller!\n";
+	}
+
 	int ufd = setup_uinput();
-	int sfd = setup_serial(PORT);
+	int sfd = setup_serial(port);
 
 	std::cout << "mouse running\n";
 
@@ -73,10 +82,10 @@ int main() {
 		if (read(sfd, &c, 1) <= 0) 
 			continue;
 		if (c == '\n') {
-			// parse "X,Y"
 			int x = 0, y = 0;
 			if (sscanf(line.c_str(), "%d,%d", &x, &y) == 2) {
 				if (x != 0 || y != 0) {
+					std::cout << "data:" << x << " " << y << "\n";
 					emit(ufd, EV_REL, REL_X, x);
 					emit(ufd, EV_REL, REL_Y, y);
 					emit(ufd, EV_SYN, SYN_REPORT, 0);

@@ -17,9 +17,10 @@
  * Definitions
  ******************************************************************************/
 // register for Accelerometer data
-#define ACCEL_XOUT_H    0x3B
+#define ACCEL_XOUT_H        0x3B
 // my MPU has a bias of -4 for y
-#define MPU_Y_BIAS_FIX  4
+#define MPU_Y_BIAS_FIX      4
+#define DEADZONE_TRESHHOLD  3
 
 /*******************************************************************************
  * Prototypes
@@ -97,7 +98,7 @@ int main(void)
             int16_t gyroY  = (int16_t)((rawData[10] << 8) | rawData[11]);
             int16_t gyroZ  = (int16_t)((rawData[12] << 8) | rawData[13]);
 
-            // -Convert to physical units
+            // converting to physical units
             // Accel formula : Multiply by 1000 to get milli-g, then divide by the 16384 scale factor
             // Gyro formula: Divide by the 131 scale factor to get degrees per second
             int gx_dps = (int)gyroX / 131;
@@ -109,10 +110,10 @@ int main(void)
             int mouseX = 0;
             int mouseY = 0;
             
-            if (gz_dps > 3 || gz_dps < -3) {
+            if (gz_dps > DEADZONE_TRESHHOLD || gz_dps < -DEADZONE_TRESHHOLD) {
                 mouseX = gz_dps; 
             }
-            if (gy_dps > 3 || gy_dps < -3) {
+            if (gy_dps > DEADZONE_TRESHHOLD || gy_dps < -DEADZONE_TRESHHOLD) {
                 mouseY = gy_dps; 
             }
 
