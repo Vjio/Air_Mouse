@@ -1,19 +1,30 @@
-Hardware requirements
-=====================
+# Air Mouse
+This project was built using NXP's LPC845 Breakout Board and an MPU 6500, with the 2 pieces of hardware communicating to each other through I2C.
+
+## Hardware requirements
 - Micro USB cable
 - LPC845 Breakout board
 - MPU 6500 / an accelerometer
 - Personal Computer
 
+## Wiring
+- VCC -> VCC
+- GND -> GND
+- SDO -> GND
+- SDI -> PIO0_11
+- SCL -> PIO0_10
+- (Sorry for the low quality of the picture)
 
 <img src="./circuit.jpeg" alt="LPC845 and MPU6500 Circuit Wiring" width="500">
 
+## Running
+First, flash the board with the code. Afterwards, run the following commands:
+```bash
+g++ -o mouse mouse.cpp
+sudo ./mouse [optional: add the port the microcontroller is connected to]
+```
 
-Air Mouse (more like air cursor) was built using NXP's LCP845 Breakout Board and a random MPU 6500. To try this project yourself, build and flash the C code to your board and then build & run the C++ code. Don't forget to check that the port in mouse.cpp fits the one your board is connected to.
+## Challenges I encountered
+This project proved to me quite challenging to me. First, I had to learn how to weld and wire different component together. Then I had to learn serial protocols for transferring data (I2C) and sensor physics for the MPU. Finally, I had to scour the internet for articles about injecting mouse events and virtual mice.
 
-
-Helped me expand my Serial Communcation knowledge (I2C protocol), learn some sensor physics and become more confident in welding and wiring together different components by myself.
-
-
-Will not receive any future updates untill I change my laptop, since 90% of the time my laptop would refuse to read the data from the LCP (faulty ports). While plugged in to my partner's macbook, the stream of data sent by the LPC would be flawleslly read by the laptop. "Debugging" by gambling on whether the port will work this time or not is unfun!
-
+Another challenge with this project was the communication between my personal laptop and the microcontroller. I ran into many issues related to simply getting my laptop to read the data. This is the main reason why this project will not receive any further updates, even though it was intriguing.
